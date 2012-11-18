@@ -33,11 +33,12 @@ La lista de numeros se puede pasar de dos formas.
 
 #### Tener en cuenta la convención
 
-     run [##/random] [numero_a_buscar]
+    run [##/random] [numero_a_buscar]
 
-1. Numero aleatorio, generado de la forma 1000 ** 1000 (elevado a la 1000), estó generará un numero de 3000 digitos
+1.Numero aleatorio, generado de la forma 1000 ** 1000 (elevado a la 1000), estó generará un numero de 3000 digitos
 
     run random 9
-2. Numero Manual, se puede ingresar un numero manualmente
+
+2.Numero Manual, se puede ingresar un numero manualmente
 
     run 233445678887 9
