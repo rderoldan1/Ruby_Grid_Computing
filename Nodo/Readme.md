@@ -23,6 +23,5 @@ Si corre bien vera un mensaje como el siguiente
     Hola tu id es 1
 
 * El mensaje `druby://localhost:49432` muestra donde esta corriendo el servicio del nodo localmente
-
 * El mesaje `Hola tu id es 1` es la respuesta del controlador, en la que le informa que esta registrado como nodo con
  un id
