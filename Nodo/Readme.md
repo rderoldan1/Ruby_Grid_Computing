@@ -16,28 +16,13 @@ En una consola
     $ cd path/to/project/Nodo/lib
     $ ruby nodo.rb
 
-Si el programa empieza bien vera un mensaje como este
 
-    Modo de uso
-    ====================
-    El controlador informa cuando hay nodos nuevos de la siguiente forma.
-    El numero de nodos ha aumentado, hay N nodos
-    para saber cuantos nodos hay escriba
-     nodos?
-    para correr la simualcion escriba
-     run [##/random] [numero_a_buscar]
-    para ayuda escriba
-     ayuda?
+Si corre bien vera un mensaje como el siguiente
 
-La lista de numeros se puede pasar de dos formas.
+    druby://localhost:49432
+    Hola tu id es 1
 
-#### Tener en cuenta la convención
+* El mensaje `druby://localhost:49432` muestra donde esta corriendo el servicio del nodo localmente
 
-     run [##/random] [numero_a_buscar]
-
-1. Numero aleatorio, generado de la forma 1000 ** 1000 (elevado a la 1000), estó generará un numero de 3000 digitos
-
-    run random 9
-2. Numero Manual, se puede ingresar un numero manualmente
-
-    run 233445678887 9
+* El mesaje `Hola tu id es 1` es la respuesta del controlador, en la que le informa que esta registrado como nodo con
+ un id
