@@ -1,9 +1,11 @@
 require 'drb'
+require 'active_support/all'
 class Nodo
   include DRbUndumped
 
-  def initialize(server)
-    @server = server
+  def initialize
+    config = get_config
+    @server =  DRbObject.new_with_uri("druby://#{config["controller"]["ip"]}:#{config["controller"]["port"]}")
     DRb.start_service("druby://localhost:0", self)
     puts DRb.uri
   end
@@ -22,9 +24,13 @@ class Nodo
      #number.to_s.scan(/#{index}/).count
   end
 
+  def get_config
+    config = File.open('config.xml')
+    Hash.from_xml(config)
+  end
+
 end
 
-server = DRbObject.new_with_uri('druby://localhost:5000')
-nodo = Nodo.new(server)
+nodo = Nodo.new
 nodo.join
 DRb.thread.join

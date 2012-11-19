@@ -1,12 +1,14 @@
 require 'drb'
 require 'colorize'
+require 'active_support/all'
 
 class Cliente
 
   include DRbUndumped
 
-  def initialize(server)
-    @controller =  server
+  def initialize
+    config = get_config
+    @controller =  DRbObject.new_with_uri("druby://#{config["controller"]["ip"]}:#{config["controller"]["port"]}")
     DRb.start_service("druby://localhost:4000", self)
   end
 
@@ -29,11 +31,12 @@ class Cliente
         if r[0].eql? "run"
           begin
             server = DRbObject.new_with_uri('druby://localhost:5000')
-            if number.eql? "random"
+            result = if number.eql? "random"
               @controller.run(Random.rand(1000**1000).to_s,pattern)
             else
               @controller.run(number,pattern)
             end
+            puts result
           rescue Exception => msd
             puts msd
           end
@@ -46,9 +49,13 @@ class Cliente
      puts line
   end
 
+  def get_config
+    config = File.open('config.xml')
+    Hash.from_xml(config)
+  end
+
 end
 
-server = DRbObject.new_with_uri('druby://localhost:5000')
-cliente = Cliente.new(server)
+cliente = Cliente.new
 cliente.run
 DRb.thread.join
