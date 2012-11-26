@@ -47,3 +47,10 @@ Lista = 123456789369258147
 Indice = 56
 
 Ocurrencias = 1
+
+
+#### Uso
+
+Para el correr la simulacion Se debe tener en cuenta que para correr el Nodo se debe correr primero el controlador.
+El cliente se puede correr en cualquier momento.
+
