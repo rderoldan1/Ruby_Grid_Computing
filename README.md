@@ -54,3 +54,13 @@ Ocurrencias = 1
 Para el correr la simulacion Se debe tener en cuenta que para correr el Nodo se debe correr primero el controlador.
 El cliente se puede correr en cualquier momento.
 
+
+#### Requerimientos
+
+Ruby 1.9
+
+RubyGems 1.8
+
+Instalar colorize  `gem install colorize`
+
+El programa es multiplataforma pero se recomienda correrlo en ambientes Unix - Linux
